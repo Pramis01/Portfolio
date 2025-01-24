@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="tailwind.config.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Ovo&display=swap" rel="stylesheet">
+</head>
+<body class="overflow-x-hidden font-Outfit leading-5">
+    <!-- 
+    <body>: The main container for all content on the webpage. 
+    Everything within this tag is visible to the user.
+    -->
+
+    <!-- 
+    class="overflow-x-hidden": Hides any horizontal overflow content.
+    Prevents horizontal scrolling if elements exceed the viewport width.
+    -->
+
+    <!-- 
+    class="font-Outfit": Sets the font family to "Outfit" for all text on the webpage.
+    Ensures a consistent typography style across the site.
+    -->
+
+    <!-- 
+    class="leading-5": Sets the line height of text to 5 units.
+    Helps with text readability by maintaining appropriate spacing between lines.
+    -->
+
+    <!-----Navigation bar-->
+
+    <div class="fixed top-0 right-0 w-11/12 -z-10 translate-y-[-80%]">
+        <!-- 
+    fixed: Fixes the element's position relative to the viewport.
+    top-0: Positions the element at the top of the screen.
+    right-0: Positions the element at the right edge of the screen.
+    w-11/12: Sets the width to 11/12 of the container's width.
+    -z-10: Sets the z-index to -10, placing the element behind other elements.
+    translate-y-[-80%]: Moves the element upward by 80% of its height.
+    -->
+        <img src="images/header-bg-color.png" class="w-full">
+     <!-- 
+    src="images/header-bg-color.png": Path to the background image.
+    class="w-full": Sets the image width to 100% of its container.
+    -->   
+    </div>
+
+
+    <nav class="w-full fixed px-5 lg:px-8 xl:px-[8%] py-4 flex
+    items-center justify-between z-50">
+    <!-- 
+    w-full: Makes the navbar occupy the full width.
+    fixed: Fixes the navbar to the top of the viewport.
+    px-5: Adds horizontal padding of 5 units.
+    lg:px-8: Adds larger horizontal padding for large screens.
+    xl:px-[8%]: Adds 8% horizontal padding for extra-large screens.
+    py-4: Adds vertical padding of 4 units.
+    flex: Enables a flexbox layout.
+    items-center: Vertically aligns items in the center.
+    justify-between: Distributes space evenly between flex items.
+    z-50: Ensures the navbar is above most elements (z-index 50).
+    -->
+        <a href="#top"><img src="images/Portfoliologo.svg" alt="logo" class="w-28 cursor-pointer mr-14">
+        <!-- 
+        src="images/Portfoliologo.svg": Path to the logo image.
+        alt="logo": Alternative text for accessibility.
+        w-28: Sets the image width to 28 units.
+        cursor-pointer: Changes the cursor to a pointer on hover.
+        mr-14: Adds a right margin of 14 units.
+        -->
+        </a>
+        <ul class="hidden md:flex items-center gap-6 lg:gap-8 rounded-full px-12 py-3
+        bg-white shadow-sm bg-opacity-50 font-Ovo">
+        <!-- 
+        hidden: Hides the menu by default.
+        md:flex: Makes it visible and a flex container on medium screens.
+        items-center: Vertically centers items.
+        gap-6: Adds a 6-unit gap between items.
+        lg:gap-8: Increases the gap to 8 units on large screens.
+        rounded-full: Makes the background fully rounded.
+        px-12: Adds horizontal padding of 12 units.
+        py-3: Adds vertical padding of 3 units.
+        bg-white: Sets the background color to white.
+        shadow-sm: Adds a small shadow for depth.
+        bg-opacity-50: Makes the background semi-transparent.
+        font-Ovo: Applies the "Ovo" font style.
+        -->
+            <li><a href="#top">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#work">Work</a></li>
+            <li><a href="#contact">Contact</a></li>
+         <!-- 
+        <li>: List item for each navigation link.
+        <a>: Hyperlink to corresponding section.
+        -->   
+        </ul>
+        <div class="flex items-center gap-4">
+            <!-- 
+        flex: Creates a flex container.
+        items-center: Vertically aligns items.
+        gap-4: Adds a 4-unit gap between items.
+        -->
+           
+            <a href="#contact"
+             class="hidden lg:flex items-center gap-3 px-10 py-2.5 border border-gray-500 rounded-full mr-6 ml-4">
+             <!-- 
+            hidden: Hides the button by default.
+            lg:flex: Displays the button as a flex container on large screens.
+            gap-3: Adds a 3-unit gap between button content.
+            px-10: Adds 10 units of horizontal padding.
+            py-2.5: Adds 2.5 units of vertical padding.
+            border: Adds a border around the button.
+            border-gray-500: Sets the border color to gray.
+            rounded-full: Makes the button fully rounded.
+            mr-6: Adds a 6-unit right margin.
+            ml-4: Adds a 4-unit left margin.
+            -->
+            contact <img src="images/arrow-icon.png" alt="icon" class="w-3">
+            <!-- 
+            img src="images/arrow-icon.png": Path to arrow icon image.
+            class="w-3": Sets the width of the icon to 3 units.
+            -->
+            </a>
+
+            <button class=" block md:hidden ml-3 " onclick="openMenu()">
+                <!-- 
+            block: Makes the button a block-level element.
+            md:hidden: Hides the button on medium and larger screens.
+            ml-3: Adds a left margin of 3 units.
+            onclick="openMenu()": Calls the "openMenu" JavaScript function when clicked.
+            -->
+                <img src="images/menu-black.png" class="w-6">
+                <!-- 
+            src="images/menu-black.png": Path to hamburger menu icon.
+            class="w-6": Sets the icon width to 6 units.
+            -->
+            </button>
+        </div>
+            <!----Mobile Menu --->
+        <ul id="sideMenu" class="flex md:hidden flex-col gap-4 py-20 px-10 fixed -right-64
+        top-0 bottom-0 w-64 z-50 h-screen bg-[#fbfbf2] transition duration-500 font-Ovo ">
+        <!-- 
+        id="sideMenu": Assigns a unique ID for JavaScript targeting.
+        md:hidden: Hides the menu on medium and larger screens.
+        flex: Makes the container a flexbox.
+        flex-col: Stacks items vertically.
+        gap-4: Adds a 4-unit gap between items.
+        py-20: Adds 20 units of vertical padding.
+        px-10: Adds 10 units of horizontal padding.
+        fixed: Fixes the position relative to the viewport.
+        -right-64: Positions the menu offscreen to the right by 64 units.
+        top-0: Aligns the menu with the top of the viewport.
+        bottom-0: Aligns the menu with the bottom of the viewport.
+        w-64: Sets the width of the menu to 64 units.
+        z-50: Ensures the menu appears above most elements.
+        h-screen: Sets the height to fill the entire screen.
+        bg-[#fbfbf2]: Applies a custom background color.
+        transition: Adds a smooth animation effect for transitions.
+        duration-500: Specifies the duration of the animation as 500ms.
+        font-Ovo: Applies the "Ovo" font style.
+        -->
+
+            <div class= " absolute right-6 top-6 " onclick="closeMenu()">
+                <!-- 
+    <div>: Container for the close button.
+    class="absolute": Positions the element absolutely within its parent container.
+    right-6: Places the element 6 units from the right edge of the parent container.
+    top-6: Places the element 6 units from the top edge of the parent container.
+    onclick="closeMenu()": Calls the "closeMenu" JavaScript function to close the menu when clicked.
+    -->
+               <img src="images/close-black.png"  class="w-5
+               cursor-pointer"> 
+               <!-- 
+    <img>: Displays the close button as an image.
+    src="images/close-black.png": Specifies the image source for the close button icon.
+    class="w-5 cursor-pointer":
+        - w-5: Sets the width of the image to 5 units.
+        - cursor-pointer: Changes the cursor to a pointer when hovering over the image, indicating it's clickable.
+    -->
+            </div>
+            
+            <li><a href="#top" onclick="closeMenu()">Home</a></li>
+            <li><a href="#about" onclick="closeMenu()">About me</a></li>
+            <li><a href="#services" onclick="closeMenu()">Services</a></li>
+            <li><a href="#work" onclick="closeMenu()"> My work</a></li>
+            <li><a href="#contact" onclick="closeMenu()">Contact me</a></li>
+        </ul>
+    </nav>
+
+    <!----- home-->
+
+    <div class="w-11/12 max-w-3xl text-center mx-auto h-screen flex flex-col items-center justify-center gap-4">
+        <!-- 
+    <div>: Container for the "Home" section content.
+    class="...": Styles the container:
+        - w-11/12: Sets the width to 11/12 of the container's parent width.
+        - max-w-3xl: Limits the maximum width to 3xl size.
+        - text-center: Centers the text inside the container.
+        - mx-auto: Centers the container horizontally using margin auto.
+        - h-screen: Sets the height to fill the entire viewport height.
+        - flex: Enables a flexbox layout.
+        - flex-col: Arranges the flex items in a column.
+        - items-center: Centers the items horizontally.
+        - justify-center: Centers the items vertically.
+        - gap-4: Adds a 4-unit gap between the flex items.
+    -->
+        <img src="images/Photo_Of_Me.jpg" class="rounded-full w-32">
+        <!-- 
+    <img>: Displays the profile picture.
+    src="images/Photo_Of_Me.jpg": Path to the profile picture image.
+    class="rounded-full w-32":
+        - rounded-full: Makes the image circular.
+        - w-32: Sets the image width to 32 units.
+    -->
+        <h3 class="flex items-center gap-2 text-xl md:text-2xl mb-3 font-Ovo">Hi ! I'm Pramis Shrestha <img src="images/hand-icon.png" alt="" class="w-6">
+         <!-- 
+        <h3>: Heading for the introduction text.
+        class="...": Styles the heading:
+            - flex: Makes it a flex container.
+            - items-center: Aligns items vertically in the center.
+            - gap-2: Adds a 2-unit gap between the text and the icon.
+            - text-xl: Sets the font size to "xl".
+            - md:text-2xl: Increases font size to "2xl" on medium screens.
+            - mb-3: Adds a 3-unit bottom margin.
+            - font-Ovo: Applies the "Ovo" font style.
+        <img src="images/hand-icon.png" alt="">: Adds a waving hand icon next to the text.
+        class="w-6": Sets the width of the icon to 6 units.
+        -->
+        </h3>
+
+        <h1 class="text-3xl sm:text-6xl lg:text[66px] font-Ovo">Front-end web developer based in Oslo</h1>
+        <!-- 
+    <h1>: Main heading for the job title.
+    class="...": Styles the heading:
+        - text-3xl: Sets the font size to "3xl".
+        - sm:text-6xl: Increases font size to "6xl" on small screens.
+        - lg:text[66px]: Sets a specific font size of 66px on large screens.
+        - font-Ovo: Applies the "Ovo" font style.
+    -->
+
+        <p class="max-w-2xl mx-auto font-Ovo">I am a frontend devloper from Oslo,  Norway with experience on webdesign and creation</p>
+        <!-- 
+    <p>: Paragraph for the description text.
+    class="...": Styles the paragraph:
+        - max-w-2xl: Limits the maximum width to "2xl".
+        - mx-auto: Centers the text horizontally using margin auto.
+        - font-Ovo: Applies the "Ovo" font style.
+    -->
+
+        <div class="flex flex-col sm:flex-row items-center gap-4 mt-4">
+            <!-- 
+        <div>: Container for the buttons.
+        class="...": Styles the container:
+            - flex: Enables a flexbox layout.
+            - flex-col: Arranges the items in a column.
+            - sm:flex-row: Switches to a row layout on small screens.
+            - items-center: Aligns the items horizontally.
+            - gap-4: Adds a 4-unit gap between buttons.
+            - mt-4: Adds a 4-unit top margin.
+        -->
+
+            <a href="#contact" 
+            class="px-10 py-3 border rounded-full border-gray-500 bg-[#fbfbf2]
+             text-black  flex items-center gap-2">contact me<img src="images/right-arrow-bold.png" alt="" class="w-4"></a>
+              <!-- 
+        <a>: Hyperlink styled as a button.
+        href="#contact": Links to the "Contact" section.
+        class="...": Styles the button:
+            - px-10: Adds horizontal padding of 10 units.
+            - py-3: Adds vertical padding of 3 units.
+            - border: Adds a border around the button.
+            - rounded-full: Makes the button fully rounded.
+            - border-gray-500: Sets the border color to gray.
+            - bg-[#fbfbf2]: Sets a light background color.
+            - text-black: Sets the text color to black.
+            - flex: Makes the button content a flex container.
+            - items-center: Aligns the content vertically.
+            - gap-2: Adds a 2-unit gap between the text and the icon.
+        <img>: Adds a right-arrow icon in the button.
+        src="images/right-arrow-bold.png": Path to the icon image.
+        class="w-4": Sets the icon width to 4 units.
+        -->
+        
+            <a href="video" 
+            class="px-10 py-3 border rounded-full border-gray-500 flex items-center gap-2
+             text-black ">My Video<img src="images/right-arrow-bold.png" alt="" class="w-4"> </a>
+        </div>
+        <!-- 
+        Similar to the contact button, but links to the "video" page.
+        -->
+    </div>
+
+<!-- -------- about me -------- -->
+<div id="about" class="w-full px-[12%] py-20 scroll-mt-20">
+    <!-- 
+    id="about": Assigns an ID for navigation or linking.
+    class="...": Styles the container:
+        - w-full: Sets the width to 100% of the parent container.
+        - px-[12%]: Adds 12% padding on the left and right sides.
+        - py-20: Adds 20 units of padding on the top and bottom.
+        - scroll-mt-20: Adds a scroll margin of 20 units for smooth scrolling alignment.
+    -->
+    <h4 class="text-center mb-2 text-lg font-Ovo"> Introduction</h4>
+    <!-- 
+    <h4>: Secondary heading for the section.
+    class="...": Styles the heading:
+        - text-center: Centers the text horizontally.
+        - mb-2: Adds a 2-unit bottom margin.
+        - text-lg: Sets the font size to "large".
+        - font-Ovo: Applies the "Ovo" font style.
+    -->
+    <h2 class="text-center mb-1 text-5xl font-Ovo">About Me</h2>
+     <!-- 
+    <h2>: Main heading for the section.
+    class="...": Styles the heading:
+        - text-center: Centers the text horizontally.
+        - mb-1: Adds a 1-unit bottom margin.
+        - text-5xl: Sets the font size to "5xl".
+        - font-Ovo: Applies the "Ovo" font style.
+    -->
+    <div class="flex w-full flex-col lg:flex-row items-center gap-20 my-20">
+       <!-- 
+        <div>: Wrapper for the content in a flex layout.
+        class="...": Styles the container:
+            - flex: Enables a flexbox layout.
+            - w-full: Sets the width to 100%.
+            - flex-col: Stacks items vertically in a column.
+            - lg:flex-row: Arranges items in a row on large screens.
+            - items-center: Centers the items horizontally.
+            - gap-20: Adds a 20-unit gap between items.
+            - my-20: Adds a 20-unit margin on the top and bottom.
+        -->
+        <div class="max-w-max mx-auto relative">
+            <!-- 
+            max-w-max: Limits the width to the content's maximum size.
+            mx-auto: Centers the container horizontally.
+            relative: Positions the container relative to its parent (used for further styling or positioning).
+            -->
+            <img src="images/Amsterdam.jpg" alt="AMSTERDAM" class="w-64 sm:w-80 
+            rounded-3xl max-w-none">
+            <!-- 
+            <img>: Displays the image.
+            src="images/Amsterdam.jpg": Path to the image file.
+            alt="AMSTERDAM": Describes the image for accessibility.
+            class="...": Styles the image:
+                - w-64: Sets the image width to 64 units.
+                - sm:w-80: Sets the width to 80 units on small screens.
+                - rounded-3xl: Applies rounded corners with a large radius.
+                - max-w-none: Prevents the image from being constrained by a parent width limit.
+            -->
+        </div>
+
+        <div class="flex-1">
+            <!-- 
+            flex-1: Makes the container grow to fill the remaining space.
+            -->
+            <p class="mb-10 max-w-2xl font-Ovo">I am an experienced frontend developer with over one years of professional expertise in the field.
+                Throughout my career, I have had the privilege of collaborating with prestigious organizations, 
+                contributing to thier success and growth</p>
+                <!-- 
+            <p>: Paragraph text.
+            class="...": Styles the paragraph:
+                - mb-10: Adds a 10-unit bottom margin.
+                - max-w-2xl: Limits the maximum width to "2xl".
+                - font-Ovo: Applies the "Ovo" font style.
+            -->
+
+            <!-- Key details in a grid -->
+            <ul class="grid grid-cols-auto sm:grid-cols-3 gap-6 m-w-2xl">
+                <li class="border-[0.5px] border-gray-400 rounded-xl p-6 cursor-pointer hover:bg-[#fbfbf2]
+                hover:-translate-y-1 duration-500 hover:shadow-[4px_4px_#000]">
+                    <img src="images/code-icon.png" alt="" class="w-7 mt-3">
+                    <h3 class="my-4 front-semibold text-gray-700">languages</h3>
+                    <p class="text-gray-600 text-sm">HTML, CSS, JavaScript, C++</p>
+                </li>
+                <!-- 
+                <ul>: Unordered list for displaying details.
+                class="...": Styles the list:
+                    - grid: Enables CSS grid layout.
+                    - grid-cols-auto: Automatically adjusts the number of columns.
+                    - sm:grid-cols-3: Displays 3 columns on small screens and larger.
+                    - gap-6: Adds a 6-unit gap between grid items.
+                    - m-w-2xl: Limits the maximum width to "2xl".
+                -->
+                     <!-- Language detail -->
+                <li class="border-[0.5px] border-gray-400 rounded-xl p-6 cursor-pointer hover:bg-[#fbfbf2]
+                hover:-translate-y-1 duration-500 hover:shadow-[4px_4px_#000]">
+                <!-- 
+                    <li>: List item for each detail.
+                    class="...": Styles the item:
+                        - border-[0.5px]: Adds a border with a thickness of 0.5px.
+                        - border-gray-400: Sets the border color to gray.
+                        - rounded-xl: Applies rounded corners.
+                        - p-6: Adds 6 units of padding.
+                        - cursor-pointer: Makes the cursor a pointer on hover.
+                        - hover:bg-[#fbfbf2]: Changes the background color on hover.
+                        - hover:-translate-y-1: Moves the item up slightly on hover.
+                        - duration-500: Adds a 500ms transition effect.
+                        - hover:shadow-[4px_4px_#000]: Adds a shadow effect on hover.
+                    -->
+                    <img src="images/edu-icon.png" alt="" class="w-7 mt-3">
+                    <!-- 
+                    src="images/code-icon.png": Path to the icon image.
+                    class="w-7 mt-3": Sets the width to 7 units and adds a top margin of 3 units.
+                    -->
+                    <h3 class="my-4 front-semibold text-gray-700"> Education</h3>
+                    <!-- 
+                    my-4: Adds a 4-unit vertical margin.
+                    front-semibold: Sets the font weight to semi-bold.
+                    text-gray-700: Sets the text color to gray.
+                    -->
+                    <p class="text-gray-600 text-sm">Information Communication and Technology</p>
+                    <!-- 
+                    text-gray-600: Sets the text color to lighter gray.
+                    text-sm: Sets the font size to small.
+                    -->
+                </li>
+
+                <li class="border-[0.5px] border-gray-400 rounded-xl p-6 cursor-pointer hover:bg-[#fbfbf2]
+                hover:-translate-y-1 duration-500 hover:shadow-[4px_4px_#000]">
+                    <img src="images/project-icon.png" alt="" class="w-7 mt-3">
+                    <h3 class="my-4 front-semibold text-gray-700">Projects</h3>
+                    <p class="text-gray-600 text-sm">Built 1 project</p>
+                </li>
+                <!-- Additional details (Education, Projects) follow the same structure as the "Languages" detail above -->
+            </ul>
+            <!-- Tools Section -->
+
+            <h4 class="my-6 text-gray-700 font-Ovo">Tools i use</h4>
+             <!-- 
+            my-6: Adds a 6-unit vertical margin.
+            text-gray-700: Sets the text color to gray.
+            font-Ovo: Applies the "Ovo" font style.
+            -->
+                  <!-- Tools Icons -->
+
+            <ul class="flex items-center gap-3 sm:gap-5">
+                <!-- 
+                flex: Enables a flexbox layout.
+                items-center: Aligns items vertically in the center.
+                gap-3: Adds a 3-unit gap between items.
+                sm:gap-5: Increases the gap to 5 units on small screens.
+                -->
+                 <!-- Each tool follows the same structure -->
+                <li class="flex items-center justify-center w-12 sm:w-14 aspect-square border border-gray-400
+                rounded-lg cursor-pointer hover:translate-y-1 duration-500">
+                 <!-- 
+                    flex: Makes the container a flexbox.
+                    items-center: Aligns items vertically.
+                    justify-center: Centers items horizontally.
+                    w-12: Sets the width to 12 units.
+                    sm:w-14: Increases the width to 14 units on small screens.
+                    aspect-square: Ensures the element is square-shaped.
+                    border: Adds a border around the element.
+                    border-gray-400: Sets the border color to gray.
+                    rounded-lg: Applies rounded corners.
+                    cursor-pointer: Changes the cursor to a pointer on hover.
+                    hover:translate-y-1: Moves the element up slightly on hover.
+                    duration-500: Adds a smooth transition effect lasting 500ms.
+                    -->
+                    <img src="images/vscode.png" alt="" class="w-5 sm:w-7">
+                    <!-- 
+                    src="images/vscode.png": Path to the VS Code logo image.
+                    w-5 sm:w-7: Sets the width to 5 units, increasing to 7 units on small screens.
+                    -->
+                </li>
+                <li class="flex items-center justify-center w-12 sm:w-14 aspect-square border border-gray-400
+                rounded-lg cursor-pointer hover:translate-y-1 duration-500">
+                    <img src="images/figma.png" alt="" class="w-5 sm:w-7">
+                </li>
+                
+                <li class="flex items-center justify-center w-12 sm:w-14 aspect-square border border-gray-400
+                rounded-lg cursor-pointer hover:translate-y-1 duration-500">
+                    <img src="images/premirepro1.png" alt="" class="w-5 sm:w-7">
+                </li>
+
+                <li class="flex items-center justify-center w-12 sm:w-14 aspect-square border border-gray-400
+                rounded-lg cursor-pointer hover:translate-y-1 duration-500">
+                    <img src="images/illustartor.png" alt="" class="w-5 sm:w-7">
+                </li>
+
+                <li class="flex items-center justify-center w-12 sm:w-14 aspect-square border border-gray-400
+                rounded-lg cursor-pointer hover:translate-y-1 duration-500">
+                    <img src="images/photoshop1.png" alt="" class="w-5 sm:w-7">
+                </li>
+                <!-- Other tools (Figma, Premiere Pro, Illustrator, Photoshop) follow the same structure -->
+            </ul>
+      </div>
+    </div>
+</div>
+
+
+<!----- ---- Services ---- ------>
+<div id="services" class="w-full px-[12%] py-20 scroll-mt-20">
+    <!-- 
+    id="services": Assigns a unique ID to the section for navigation.
+    class="...": Styles the section:
+        - w-full: Makes the section occupy the full width of the container.
+        - px-[12%]: Adds 12% horizontal padding on both sides.
+        - py-20: Adds 20 units of vertical padding (top and bottom).
+        - scroll-mt-20: Adds a 20-unit scroll margin for smooth scrolling alignment.
+    -->
+                    <!-- Section heading -->
+    <h4 class="text-center mb-2 text-lg font-Ovo">What i offer</h4>
+    <!-- 
+    <h4>: Secondary heading for the section.
+    class="...": Styles the heading:
+        - text-center: Centers the text horizontally.
+        - mb-2: Adds a 2-unit bottom margin.
+        - text-lg: Sets the font size to "large".
+        - font-Ovo: Applies the "Ovo" font style.
+    -->
+            <!-- Main heading -->
+    <h2 class="text-center text-5xl font-Ovo">My services</h2>
+     <!-- 
+    <h2>: Main heading for the section.
+    class="...": Styles the heading:
+        - text-center: Centers the text horizontally.
+        - text-5xl: Sets the font size to "5xl".
+        - font-Ovo: Applies the "Ovo" font style.
+    -->       
+        <!-- Description -->
+    <p class="text-center max-w-2xl mx-auto mt-5 mb-12 font-Ovo">As a dedicated web developer, I specialize in creating responsive, user-friendly, and visually appealing websites tailored to meet your unique business needs. With a focus on clean code, modern design, and seamless functionality, I aim to bring your digital vision to life. Whether you need a sleek portfolio, an e-commerce platform, or a custom web solution,
+         I am  here to deliver high-quality results.</p>
+    <!-- 
+    <p>: Paragraph for the section description.
+    class="...": Styles the paragraph:
+        - text-center: Centers the text horizontally.
+        - max-w-2xl: Limits the width to a maximum of "2xl".
+        - mx-auto: Centers the paragraph horizontally.
+        - mt-5: Adds a 5-unit top margin.
+        - mb-12: Adds a 12-unit bottom margin.
+        - font-Ovo: Applies the "Ovo" font style.
+    -->
+
+            <!-- Services Grid -->
+
+    <div class="grid grid-auto gap-6 my-10">
+        <!-- 
+        <div>: Grid container for service items.
+        class="...": Styles the container:
+            - grid: Enables a CSS grid layout.
+            - grid-auto: Automatically adjusts column sizes.
+            - gap-6: Adds a 6-unit gap between grid items.
+            - my-10: Adds a 10-unit top and bottom margin.
+        -->
+              <!-- Service Item: Web Design -->
+        <div class="border border-gray-400 rounded-lg px-8 py-12
+         hover:shadow-[4px_4px_#000] cursor-pointer hover:bg-[#fbfbf2] hover:-translate-y-1
+         duration-500">
+            <!-- 
+            <div>: Container for the service item.
+            class="...": Styles the item:
+                - border: Adds a border around the item.
+                - border-gray-400: Sets the border color to gray.
+                - rounded-lg: Makes the corners rounded.
+                - px-8: Adds 8 units of horizontal padding.
+                - py-12: Adds 12 units of vertical padding.
+                - hover:shadow-[4px_4px_#000]: Adds a shadow effect on hover.
+                - cursor-pointer: Changes the cursor to a pointer on hover.
+                - hover:bg-[#fbfbf2]: Changes the background color on hover.
+                - hover:-translate-y-1: Moves the item slightly upward on hover.
+                - duration-500: Adds a smooth transition effect lasting 500ms.
+            -->
+         <img src="images/web-icon.png" alt="" class="w-10">
+          <!-- 
+            <img>: Displays an icon representing the service.
+            src="images/web-icon.png": Path to the service icon.
+            class="w-10": Sets the width of the icon to 10 units.
+            -->      
+         <h3 class="text-lg my-4 text-gray-700">web design</h3>
+            <!-- 
+            <h3>: Title of the service.
+            class="...": Styles the title:
+                - text-lg: Sets the font size to "large".
+                - my-4: Adds a 4-unit vertical margin.
+                - text-gray-700: Sets the text color to gray.
+            -->   
+         <p class="text-sm text-gray-600 leading-5">WEB DEVLOPMENT IS THE PROCESS OF BUILDING,PROGRAMING...</p>
+                 <!-- 
+            <p>: Short description of the service.
+            class="...": Styles the paragraph:
+                - text-sm: Sets the font size to "small".
+                - text-gray-600: Sets the text color to light gray.
+                - leading-5: Sets the line height to 5 units.
+            -->
+         <a href="https://en.wikipedia.org/wiki/Web_development" class="flex items-center gap-2 text-sm mt-5" >Read more <img src ="images/right-arrow.png" alt="" class="w-4"></a>
+                <!-- 
+            <a>: Hyperlink to learn more about the service.
+            href="...": Specifies the link target.
+            class="...": Styles the link:
+                - flex: Makes the link a flex container.
+                - items-center: Aligns the content vertically.
+                - gap-2: Adds a 2-unit gap between text and icon.
+                - text-sm: Sets the font size to "small".
+                - mt-5: Adds a 5-unit top margin.
+            <img>: Adds an arrow icon.
+            src="images/right-arrow.png": Path to the arrow icon image.
+            class="w-4": Sets the width of the icon to 4 units.
+            -->
+         </div>
+    </div>
+
+    <div class="grid grid-auto gap-6 my-10">
+        <div class="border border-gray-400 rounded-lg px-8 py-12
+         hover:shadow-[4px_4px_#000] cursor-pointer hover:bg-[#fbfbf2] hover:-translate-y-1
+         duration-500">
+         <img src="images/ui-icon.png" alt="" class="w-10">
+         <h3 class="text-lg my-4 text-gray-700">UI/UX Design</h3>
+         <p class="text-sm text-gray-600 leading-5">User experience design (UX design, UXD, UED, or XD), upon which is the centralized requirements for "User Experience Design Research...</p>
+         <a href="https://en.wikipedia.org/wiki/User_experience_design" class="flex items-center gap-2 text-sm mt-5" >Read more <img src ="images/right-arrow.png" alt="" class="w-4"></a>
+         </div>
+    </div>
+
+    <div class="grid grid-auto gap-6 my-10">
+        <div class="border border-gray-400 rounded-lg px-8 py-12
+         hover:shadow-[4px_4px_#000] cursor-pointer hover:bg-[#fbfbf2] hover:-translate-y-1
+         duration-500">
+         <img src="images/graphics-icon.png" alt="" class="w-10">
+         <h3 class="text-lg my-4 text-gray-700">Graphics Design</h3>
+         <p class="text-sm text-gray-600 leading-5">Graphic design is a craft where professionals create visual content to communicate messages...</p>
+         <a href="https://en.wikipedia.org/wiki/Graphic_design" class="flex items-center gap-2 text-sm mt-5" >Read more <img src ="images/right-arrow.png" alt="" class="w-4"></a>
+         </div>
+    </div>
+     <!-- Additional service items (UI/UX Design, Graphics Design) follow the same structure as the "Web Design" service item -->
+</div>
+
+
+
+<!---- --------------- My work --------------------    --------->
+    <!-- Main Work Section -->
+<div id="work" class="w-full px-[12%] py-20 scroll-mt-20">
+    <!-- 
+    id="work": Unique ID for navigation and linking.
+    class="...": Styles the container:
+        - w-full: Full width of the container.
+        - px-[12%]: Adds 12% horizontal padding on both sides.
+        - py-20: Adds 20 units of vertical padding (top and bottom).
+        - scroll-mt-20: Adds a 20-unit scroll margin for better alignment when scrolling.
+    -->
+    <h4 class="text-center mb-2 text-lg font-Ovo">My portfolio</h4>
+    <!-- 
+    text-center: Centers the text.
+    mb-2: Adds a 2-unit bottom margin.
+    text-lg: Sets font size to "large".
+    font-Ovo: Applies the "Ovo" font style.
+    -->
+    <h2 class="text-center text-5xl font-Ovo">My latest work</h2>
+    <!-- 
+    text-5xl: Sets font size to "5xl" for the main heading.
+    -->
+    <p class="text-center max-w-2xl mx-auto mt-5 mb-12 font-Ovo">Welcome to my web devlopment porfolio! Explore a collection of projects showcasing my expertise
+        in front-end devlopment.</p>
+         <!-- 
+    max-w-2xl: Limits the maximum width to "2xl".
+    mx-auto: Centers the text horizontally.
+    mt-5: Adds a 5-unit top margin.
+    mb-12: Adds a 12-unit bottom margin.
+    -->
+
+        <div id="grid grid-auto my-10 gap-5">
+            <!-- 
+        grid-auto: Uses automatic grid layout.
+        my-10: Adds a 10-unit top and bottom margin.
+        gap-5: Adds a 5-unit gap between items.
+        -->
+
+            <div class="aspect-square bg-[url('./images/lacrossescreenshot.jpg')] bg-no-repeat
+                bg-cover bg-center rounded-lg relative cursor-pointer group">
+                  <!-- 
+            aspect-square: Makes the element square.
+            bg-[url(...)]: Background image for the project.
+            bg-no-repeat: Ensures the image doesn't repeat.
+            bg-cover: Scales the background to cover the entire element.
+            bg-center: Centers the background image.
+            rounded-lg: Adds rounded corners.
+            relative: Enables positioning relative to this container.
+            cursor-pointer: Changes the cursor to a pointer on hover.
+            group: Enables group hover styling.
+            -->
+                <div class="bg-white w-11/12 rounded-md absolute bottom-5 left-1/2
+                    -translate-x-1/2 py-3 px-5 flex items-center justify-between duration-500
+                    group-hover:bottom-7">
+                    <!-- 
+                bg-white: White background for the overlay.
+                w-11/12: Width is 11/12 of the parent.
+                rounded-md: Adds medium rounded corners.
+                absolute: Positions the overlay within the parent container.
+                bottom-5: Positions 5 units from the bottom.
+                left-1/2: Centers horizontally by starting at 50% of the parent width.
+                -translate-x-1/2: Moves the overlay left by 50% of its width.
+                py-3 px-5: Adds padding for spacing.
+                flex: Uses flexbox for layout.
+                items-center: Centers items vertically.
+                justify-between: Spreads items horizontally.
+                duration-500: Smooth transition over 500ms.
+                group-hover:bottom-7: Moves the overlay up on hover.
+                -->
+
+                    <div>
+                        <h2 class="font-semibold">Frontend Project</h2>
+                        <p class="text-sm texxt-gray-700">Web design</p>
+                    </div>
+                    <!-- 
+                font-semibold: Makes the font weight semi-bold.
+                text-sm: Sets small font size for the description.
+                text-gray-700: Sets the text color to gray.
+                -->
+
+                    <div class="border rounded-full border-black w-9 aspect-square flex items-center justify-center shadow-[2px_2px_0#000] 
+                        group-hover:bg-[#fbfbf2] transition">
+                         <!-- 
+                    border: Adds a border.
+                    rounded-full: Makes the element circular.
+                    w-9: Width of 9 units.
+                    aspect-square: Ensures the element is square.
+                    flex: Flex container for centering content.
+                    shadow-[2px_2px_0#000]: Adds a shadow effect.
+                    group-hover:bg-[#fbfbf2]: Changes the background color on hover.
+                    transition: Smooth transition for hover effects.
+                    -->
+                        <a href="Pramisshrestha_1IMB_Oppdrag1/index.html"> <img src="images/send-icon.png" alt="" class="w-5"></a>
+                     <!-- 
+                    href: Links to the project.
+                    src="images/send-icon.png": Path to the "send" icon.
+                    w-5: Sets the icon width to 5 units.
+                    -->
+                    </div>
+                </div>
+            </div>   
+        </div>
+</div>
+
+        <!-- Additional Projects (Same structure as above) -->
+<div id="work" class="w-full px-[12%] py-20 scroll-mt-20">
+    
+        <div class="grid grid-auto my-10 gap-5">
+            <div class="aspect-square bg-[url('./images/QuotewithNaturelogo.png')] bg-no-repeat
+             bg-cover bg-center rounded-lg relative cursor-pointer group">
+
+                <div class="bg-white w-11/12 rounded-md absolute bottom-5 left-1/2
+                -translate-x-1/2 py-3 px-5 flex items-center justify-between duration-500
+                group-hover:bottom-7">
+
+                    <div>
+                        <h2 class="font-semibold">Design Project</h2>
+                        <p class="text-sm texxt-gray-700">logo design</p>
+                    </div>
+                    <div class="border rounded-full border-black w-9 aspect-square 
+                    flex items-center justify-center shadow-[2px_2px_0#000] 
+                    group-hover:bg-[#fbfbf2] transition">
+                    <a href="https://www.instagram.com/quote.with.nature/"> <img src="images/send-icon.png" alt="" class="w-5"></a>
+                    </div>
+                </div>
+            </div>   
+        </div>
+</div>
+
+<div id="work" class="w-full px-[12%] py-20 scroll-mt-20">
+    
+    <div class="grid grid-auto my-10 gap-5">
+        <div class="aspect-square bg-[url('./images/curiousmind.jpg')] bg-no-repeat
+         bg-cover bg-center rounded-lg relative cursor-pointer group">
+
+            <div class="bg-white w-11/12 rounded-md absolute bottom-5 left-1/2
+            -translate-x-1/2 py-3 px-5 flex items-center justify-between duration-500
+            group-hover:bottom-7">
+
+                <div>
+                    <h2 class="font-semibold">Design Project</h2>
+                    <p class="text-sm texxt-gray-700">Graphic Design</p>
+                </div>
+                <div class="border rounded-full border-black w-9 aspect-square 
+                flex items-center justify-center shadow-[2px_2px_0#000] 
+                group-hover:bg-[#fbfbf2] transition">
+                    <img src="images/send-icon.png" alt="" class="w-5">
+                </div>
+            </div>
+        </div>   
+    </div>
+</div>
+
+<div id="work" class="w-full px-[12%] py-20 scroll-mt-20">
+    
+    <div class="grid grid-auto my-10 gap-5">
+        <div class="aspect-square bg-[url('./images/Artfusion.png')] bg-no-repeat
+         bg-cover bg-center rounded-lg relative cursor-pointer group">
+
+            <div class="bg-white w-11/12 rounded-md absolute bottom-5 left-1/2
+            -translate-x-1/2 py-3 px-5 flex items-center justify-between duration-500
+            group-hover:bottom-7">
+
+                <div>
+                    <h2 class="font-semibold">Design Project</h2>
+                    <p class="text-sm texxt-gray-700">App Design</p>
+                </div>
+                <div class="border rounded-full border-black w-9 aspect-square 
+                flex items-center justify-center shadow-[2px_2px_0#000] 
+                group-hover:bg-[#fbfbf2] transition">
+                    <img src="images/send-icon.png" alt="" class="w-5">
+                </div>
+            </div>
+        </div>   
+    </div>
+</div>
+
+
+
+<!--- --------------     contacts        ---------------  ---->
+
+<div id="contact" class="w-full px-[12%] py-20 scroll-mt-20 bg-[url('./images/footer-bf-color.png')]
+  bg-no-repeat bg-[length:90%_auto] bg-center ">
+    <!-- 
+    id="contact": Unique ID for linking to the section.
+    class="...": Styles the container:
+        - w-full: Makes the container span the full width.
+        - px-[12%]: Adds 12% padding on the left and right sides.
+        - py-20: Adds 20 units of padding on the top and bottom.
+        - scroll-mt-20: Adds a 20-unit scroll margin for alignment when scrolling to this section.
+        - bg-[url(...)]: Applies a background image to the section.
+        - bg-no-repeat: Ensures the background image does not repeat.
+        - bg-[length:90%_auto]: Sets the background size to 90% of the width and auto height.
+        - bg-center: Centers the background image within the section.
+    -->
+    <h4 class="text-center mb-2 text-lg font-Ovo">Connect With Me</h4>
+    <!-- 
+    <h4>: Secondary heading for the section.
+    class="...": Styles the heading:
+        - text-center: Centers the text horizontally.
+        - mb-2: Adds a 2-unit bottom margin.
+        - text-lg: Sets the font size to "large".
+        - font-Ovo: Applies the "Ovo" font style.
+    -->
+    <h2 class="text-center text-5xl font-Ovo">Get in touch</h2>
+    <!-- 
+    <h2>: Main heading for the section.
+    class="...": Styles the heading:
+        - text-center: Centers the text horizontally.
+        - text-5xl: Sets the font size to "5xl".
+        - font-Ovo: Applies the "Ovo" font style.
+    -->
+    <p class="text-center max-w-2xl mx-auto mt-5 mb-12 font-Ovo">I'd love to hear from you!
+        If you have questions,comments or feedback, please use the form below.</p>
+    <!-- 
+    <p>: Paragraph for the section description.
+    class="...": Styles the paragraph:
+        - text-center: Centers the text horizontally.
+        - max-w-2xl: Limits the maximum width to "2xl".
+        - mx-auto: Centers the paragraph using auto margins.
+        - mt-5: Adds a 5-unit top margin.
+        - mb-12: Adds a 12-unit bottom margin.
+        - font-Ovo: Applies the "Ovo" font style.
+    -->
+
+    <form method="post" action="https://api.web3forms.com/submit" class="m-w-2xl mx-auto">
+        <!-- 
+        method="post": Specifies the HTTP method for form submission.
+        action="...": Specifies the URL where form data will be submitted.
+        class="...": Styles the form:
+            - m-w-2xl: Limits the maximum width to "2xl".
+            - mx-auto: Centers the form horizontally.
+        -->
+            <!-- Hidden Access Key -->
+        <input type="hidden" name="access_key" value="3075f309-5bb5-4a84-8d7a-184e89a07cc2">
+          <!-- 
+        type="hidden": A hidden field that contains the access key for form submission.
+        name="access_key": Name of the field.
+        value="...": The access key value for the form service.
+        -->
+        <div class="grid grid-cols-auto gap-6 mt-10 mb-8">
+            <input type="text" placeholder="Enter your name" class="flex-1 p-3
+            outline-none border-[0.5px] border-gray-400 rounded-md bg-white" required name="name">
+           <!-- 
+            grid: Enables a grid layout.
+            grid-cols-auto: Automatically adjusts column sizes.
+            gap-6: Adds a 6-unit gap between grid items.
+            mt-10: Adds a 10-unit top margin.
+            mb-8: Adds an 8-unit bottom margin.
+            --> 
+            <input type="email" placeholder="Enter your email" class="flex-1 p-3
+            outline-none border-[0.5px] border-gray-400 rounded-md bg-white" required name="email">
+        <!-- 
+            type="email": Specifies an email input field.
+            placeholder="Enter your email": Placeholder text for the input field.
+            Styles are the same as the name input field.
+            name="email": Assigns a name to the input field for form data submission.
+            -->
+        </div>
+             <!-- Message Input -->
+        <textarea rows="6" placeholder="Enter your message" class="w-full p-4 otline-none
+        border-[0.5px] border-gray-400 rounded-md bg-white mb-6" required name="message"></textarea>
+        <!-- 
+        <textarea>: Creates a multi-line input field.
+        rows="6": Sets the height of the text area to 6 rows.
+        placeholder="Enter your message": Placeholder text for the text area.
+        class="...": Styles the text area:
+            - w-full: Makes the text area full width.
+            - p-4: Adds padding of 4 units.
+            - outline-none: Removes the outline on focus.
+            - border-[0.5px]: Adds a border with 0.5px thickness.
+            - border-gray-400: Sets the border color to gray.
+            - rounded-md: Adds medium-rounded corners.
+            - bg-white: Sets the background color to white.
+            - mb-6: Adds a 6-unit bottom margin.
+        required: Makes the field mandatory.
+        name="message": Assigns a name to the text area for form data submission.
+        -->
+        <button class="py-3 px-8 w-max flex items-center justify-between gap-2
+        bg-black/80 text-white rounded-full mx-autp hover:bg-black duration-500" >
+        <!-- 
+            <button>: Creates a clickable button for form submission.
+            class="...": Styles the button:
+                - py-3: Adds 3 units of vertical padding.
+                - px-8: Adds 8 units of horizontal padding.
+                - w-max: Sets the width to fit the content.
+                - flex: Enables a flex layout inside the button.
+                - items-center: Vertically centers the content.
+                - justify-between: Spreads items evenly inside the button.
+                - gap-2: Adds a 2-unit gap between items.
+                - bg-black/80: Sets the background color to black with 80% opacity.
+                - text-white: Sets the text color to white.
+                - rounded-full: Makes the button fully rounded.
+                - mx-auto: Centers the button horizontally.
+                - hover:bg-black: Changes the background to black on hover.
+                - duration-500: Adds a smooth 500ms transition effect.
+            -->
+            Submit now 
+            <img src="images/right-arrow-white.png" alt="" class="w-4">
+            <!-- 
+            <img>: Adds an icon to the button.
+            src="images/right-arrow-white.png": Path to the icon image.
+            class="w-4": Sets the icon width to 4 units.
+            -->
+        </button>
+    </form>
+</div>
+
+
+
+
+<!------  ----------       Footer     ---------     ---------->
+<div class="mt-20">
+    <!-- 
+    mt-20: Adds a top margin of 20 units to create spacing above the footer section.
+    -->
+
+    <!-- Logo and Contact Info -->
+        <div class="text-center">
+            <!-- 
+        text-center: Centers the content horizontally.
+        -->
+            <img src="images/Portfoliologo.svg" alt="logo" class="w-36 mx-auto mb-0">
+             <!-- 
+        <img>: Displays the logo image.
+        src="images/Portfoliologo.svg": Path to the logo image.
+        alt="logo": Alternative text for accessibility.
+        class="...": Styles the logo:
+            - w-36: Sets the width to 36 units.
+            - mx-auto: Centers the image horizontally.
+            - mb-0: Sets the bottom margin to 0.
+        -->
+
+        <!-- Contact Information -->
+            <div class="w-max flex items-center gap-2 mx-auto">
+                  <!-- 
+            w-max: Ensures the width of the container matches its content.
+            flex: Creates a flexbox layout.
+            items-center: Aligns items vertically in the center.
+            gap-2: Adds a 2-unit gap between the icon and the text.
+            mx-auto: Centers the container horizontally.
+            -->
+                <img src="images/mail_icon.png" alt="" class="w-6">
+                <!-- 
+            <img>: Displays the email icon.
+            src="images/mail_icon.png": Path to the email icon image.
+            alt="": Alternative text (empty for decorative purposes).
+            class="w-6": Sets the width to 6 units.
+            -->
+                pramisshrestha01@gmail.com
+                <!-- 
+            Plain text for the email address.
+            -->
+            </div>
+        </div>
+                 <!-- Footer Bottom Section -->
+    <div class="text-center sm:flex items-center justify-between border-t 
+        border-gray-400 mx-[10%] mt-12 py-6">
+        <!-- 
+        text-center: Centers the text horizontally by default.
+        sm:flex: Switches to a flex layout on small screens and larger.
+        items-center: Aligns flex items vertically in the center.
+        justify-between: Distributes flex items with space between them.
+        border-t: Adds a top border to separate this section from the content above.
+        border-gray-400: Sets the border color to gray.
+        mx-[10%]: Adds horizontal margins of 10% on both sides.
+        mt-12: Adds a 12-unit top margin.
+        py-6: Adds 6 units of padding on the top and bottom.
+        -->
+
+        <!-- Copyright Notice -->
+            <p> © 2024 Pramis Shrestha. All rights reserved</p>
+            <!-- 
+        <p>: Paragraph text for the copyright notice.
+        -->
+                <!-- Social Media Links -->
+        <ul class="flex items-center justify-center gap-10 mt-4 sm:mt-0">
+            <!-- 
+            flex: Enables a flexbox layout for the list items.
+            items-center: Aligns items vertically in the center.
+            justify-center: Centers the items horizontally.
+            gap-10: Adds a 10-unit gap between the list items.
+            mt-4: Adds a 4-unit top margin.
+            sm:mt-0: Removes the top margin on small screens and larger.
+            -->
+            <!-- Instagram Link -->
+            <li><a href="https://www.instagram.com/pramiss_/">Instagram</a></li>
+            <li><a href="https://www.instagram.com/pramiss_/">Instagram</a></li>
+            <!-- 
+            <li>: List item for the Instagram link.
+            <a>: Anchor tag for the link.
+            href="https://www.instagram.com/pramiss_/": Links to the Instagram profile.
+            -->
+                     <!-- Facebook Link -->
+            <li><a href="https://www.facebook.com/">Facebook</a></li>
+            <!-- 
+            <li>: List item for the Facebook link.
+            <a>: Anchor tag for the link.
+            href="https://www.facebook.com/": Links to the Facebook page.
+            -->
+         </ul>
+    </div>
+</div>
+
+     
+    
+<script src="./script.js"></script>    
+</body>
+</html>
